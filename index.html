@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> Calculator </h1>
+        <div class="calculator">
+            <input type="text" id="show">
+            <table>
+                <tr>
+                    <td><button>(</button></td>
+                    <td><button>)</button></td>
+                    <td><button>C</button></td>
+                    <td><button>%</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button>X</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button>-</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td><button>0</button></td>
+                    <td><button>.</button></td>
+                    <td><button>/</button></td>
+                    <td><button>=</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        let screen = document.getElementById('show');
+
+        buttons = document.querySelectorAll('button');
+
+        let screenValue ="";
+       
+        for (item of buttons) {
+            item.addEventListener('click', function (event) {
+                buttonText = event.target.innerText;
+
+                 console.log('Button text is', buttonText);
+                if (buttonText == 'X') {
+                    buttonText = '*';
+                    screenValue += buttonText;
+                    show.value = screenValue;
+                    
+                }
+                else if (buttonText == 'C') {
+                    screenValue = "";
+                    show.value= screenValue;
+                }
+                else if (buttonText == '=') {
+                    
+                    screenValue = show.value = eval(screenValue);
+                   
+                }
+                else {
+                    screenValue += buttonText;
+                    show.value = screenValue;
+                    
+                }
+
+            })
+        }
+
+    </script>
+
+    <footer>
+        <p style="text-align: center;">©2022 Developed by Ashik Uz Zaman</p>
+    </footer>
+</body>
+
+</html>
